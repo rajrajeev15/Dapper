@@ -9,7 +9,7 @@ using DapperDemo.Services;
 
 namespace DapperDemo.Controllers
 {
-    public class CustomerController : Controller
+    public class HomeController : Controller
     {
        
 
