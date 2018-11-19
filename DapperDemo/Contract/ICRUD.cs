@@ -8,10 +8,10 @@ namespace DapperDemo.Contract
 {
     interface ICRUD<T>
     {
-         int Create<T>(T obj1);
-         int Update<T>(T obj1);
+         int Create(T obj1);
+         int Update(T obj1);
          T List();
-         int Delete<T>(T obj1);
+         int Delete(T obj1);
 
     }
 }

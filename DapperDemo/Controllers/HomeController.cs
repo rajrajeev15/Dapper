@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DapperDemo.Entities;
 using DapperDemo.Services;
 
 
@@ -17,12 +18,23 @@ namespace DapperDemo.Controllers
 
         public ActionResult Index()
         {
-            CustomerServices cs = new CustomerServices();
-            CustomerEntities ce = new CustomerEntities();
-            cs.Create(ce);
+            
+            return View();
+        }
+        public ActionResult Create()
+        {
+
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Create(CustomerEntities xct)
+        {
+            CustomerServices cs = new CustomerServices();
+            cs.Create(xct);
+
+            return View();
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
