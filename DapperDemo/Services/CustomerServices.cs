@@ -3,6 +3,7 @@ using DapperDemo.Contract;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using Dapper;
 
 namespace DapperDemo.Services
 {
@@ -10,35 +11,55 @@ namespace DapperDemo.Services
 
     public class CustomerServices : ICRUD<CustomerEntities>
     {
-        SqlConnection con;
+
+        string strcon = string.Empty;
+        SqlConnection Con = null;
 
 
         public CustomerServices()
         {
-            string strcon = ConfigurationManager.ConnectionStrings["PractiseDbContext"].ConnectionString;
-            //create new sqlconnection and connection to database by using connection string from web.config file  
-            SqlConnection con = new SqlConnection(strcon);
-            con.Open();
-
+            strcon = ConfigurationManager.ConnectionStrings["PractiseDbContext"].ConnectionString;
+            Con = new SqlConnection();
         }
         public int Create<CustomerEntities>(CustomerEntities obj1)
         {
-            throw new NotImplementedException();
+            //var para = new DynamicParameters();
+
+            //para.Add("@CustomerName", obj1); // Normal Parameters  
+            //para.Add("@ContactName", objss.ROLLNO);
+            //para.Add("@Address", objss.COURSE);
+            //para.Add("@City", "1");
+            //para.Add("@PostalCode", "1");
+            ////@CustomerName ,@ContactName,@Address ,@City ,@PostalCode
+            //para.Add("@Myout", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            //// Getting Out Parameter  
+
+            //para.Add("@Ret", dbType: DbType.Int32, direction: ParameterDirection.ReturnValue);
+            //// Getting Return value  
+
+            //Con.Open(); // opening connection  
+
+            //Con.Execute("Usp_getallstudents", para, commandType: CommandType.StoredProcedure);
+            ////Executing Command   
+            //// con.Execute("INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode) VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006');");
+            return 0;
         }
 
         public int Delete<CustomerEntities>(CustomerEntities obj1)
         {
-            throw new NotImplementedException();
+            return 0;
         }
 
         public CustomerEntities List()
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public int Update<CustomerEntities>(CustomerEntities obj1)
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
+
+   
 }

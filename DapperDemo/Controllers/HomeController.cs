@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using DapperDemo.Services;
 
+
 namespace DapperDemo.Controllers
 {
     public class HomeController : Controller
@@ -17,6 +18,8 @@ namespace DapperDemo.Controllers
         public ActionResult Index()
         {
             CustomerServices cs = new CustomerServices();
+            CustomerEntities ce = new CustomerEntities();
+            cs.Create(ce);
             return View();
         }
 
