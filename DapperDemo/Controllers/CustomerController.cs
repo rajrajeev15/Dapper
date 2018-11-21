@@ -24,6 +24,13 @@ namespace DapperDemo.Controllers
             return View();
         }
 
+        public ActionResult Edit(int id)
+        {
+
+            return View();
+        }
+
+
         [HttpPost]
         public ActionResult Create(CustomerEntities xct)
         {
